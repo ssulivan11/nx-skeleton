@@ -30,9 +30,7 @@
     },
     "foresight-dashboard-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "foresight-dashboard"
-      ]
+      "implicitDependencies": ["foresight-dashboard"]
     },
     "shared-ui-components": {
       "tags": []
