@@ -1,10 +1,9 @@
 # NxSkeleton
 
-## Getting Stared:
+### Prerequisites:
 
 ```bash
-npm install -g @nrwl/cli
-
+yarn global add @nrwl/cli
 yarn
 ```
 
@@ -15,7 +14,7 @@ yarn start
 $ nx serve foresight-dashboard --port 3000
 ```
 
-### Storybook - UI Components
+### Start - Storybook UI Components
 
 ```bash
 yarn storybook
