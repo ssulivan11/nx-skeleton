@@ -25,6 +25,12 @@
     "foresight-dashboard-e2e": {
       "tags": [],
       "implicitDependencies": ["foresight-dashboard"]
+    },
+    "shared-ui-components": {
+      "tags": []
+    },
+    "shared-utils": {
+      "tags": []
     }
   }
 }
