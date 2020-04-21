@@ -168,6 +168,146 @@
           }
         }
       }
+    },
+    "network-athena": {
+      "root": "libs/network/athena",
+      "sourceRoot": "libs/network/athena/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/network/athena/.eslintrc",
+            "tsConfig": [
+              "libs/network/athena/tsconfig.lib.json",
+              "libs/network/athena/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/network/athena/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/network/athena/jest.config.js",
+            "tsConfig": "libs/network/athena/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "network-athena-cm": {
+      "root": "libs/network/athena-cm",
+      "sourceRoot": "libs/network/athena-cm/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/network/athena-cm/.eslintrc",
+            "tsConfig": [
+              "libs/network/athena-cm/tsconfig.lib.json",
+              "libs/network/athena-cm/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/network/athena-cm/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/network/athena-cm/jest.config.js",
+            "tsConfig": "libs/network/athena-cm/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "network-platform": {
+      "root": "libs/network/platform",
+      "sourceRoot": "libs/network/platform/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/network/platform/.eslintrc",
+            "tsConfig": [
+              "libs/network/platform/tsconfig.lib.json",
+              "libs/network/platform/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/network/platform/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/network/platform/jest.config.js",
+            "tsConfig": "libs/network/platform/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "network-salesforce": {
+      "root": "libs/network/salesforce",
+      "sourceRoot": "libs/network/salesforce/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/network/salesforce/.eslintrc",
+            "tsConfig": [
+              "libs/network/salesforce/tsconfig.lib.json",
+              "libs/network/salesforce/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/network/salesforce/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/network/salesforce/jest.config.js",
+            "tsConfig": "libs/network/salesforce/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "network-entitlements": {
+      "root": "libs/network/entitlements",
+      "sourceRoot": "libs/network/entitlements/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/network/entitlements/.eslintrc",
+            "tsConfig": [
+              "libs/network/entitlements/tsconfig.lib.json",
+              "libs/network/entitlements/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/network/entitlements/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/network/entitlements/jest.config.js",
+            "tsConfig": "libs/network/entitlements/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

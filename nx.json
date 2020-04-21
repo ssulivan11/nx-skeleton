@@ -31,6 +31,21 @@
     },
     "shared-utils": {
       "tags": []
+    },
+    "network-athena": {
+      "tags": []
+    },
+    "network-athena-cm": {
+      "tags": []
+    },
+    "network-platform": {
+      "tags": []
+    },
+    "network-salesforce": {
+      "tags": []
+    },
+    "network-entitlements": {
+      "tags": []
     }
   }
 }
