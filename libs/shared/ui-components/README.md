@@ -1,6 +1,12 @@
 # shared-ui-components
 
-This library was generated with [Nx](https://nx.dev).
+> @nx-skeleton/shared-ui-components
+
+## Running Storybook
+
+```bash
+nx run shared-ui-components:storybook
+```
 
 ## Running unit tests
 
