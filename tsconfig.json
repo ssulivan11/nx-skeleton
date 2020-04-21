@@ -28,6 +28,21 @@
       ],
       "@nx-skeleton/network/entitlements": [
         "libs/network/entitlements/src/index.ts"
+      ],
+      "@nx-skeleton/foresight-dashboard/admin": [
+        "libs/foresight-dashboard/admin/src/index.ts"
+      ],
+      "@nx-skeleton/foresight-dashboard/add-widgets": [
+        "libs/foresight-dashboard/add-widgets/src/index.ts"
+      ],
+      "@nx-skeleton/foresight-dashboard/help": [
+        "libs/foresight-dashboard/help/src/index.ts"
+      ],
+      "@nx-skeleton/foresight-dashboard/agreements": [
+        "libs/foresight-dashboard/agreements/src/index.ts"
+      ],
+      "@nx-skeleton/foresight-dashboard/condition-monitoring": [
+        "libs/foresight-dashboard/condition-monitoring/src/index.ts"
       ]
     }
   },

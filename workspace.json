@@ -308,6 +308,161 @@
           }
         }
       }
+    },
+    "foresight-dashboard-admin": {
+      "root": "libs/foresight-dashboard/admin",
+      "sourceRoot": "libs/foresight-dashboard/admin/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/foresight-dashboard/admin/.eslintrc",
+            "tsConfig": [
+              "libs/foresight-dashboard/admin/tsconfig.lib.json",
+              "libs/foresight-dashboard/admin/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/foresight-dashboard/admin/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/foresight-dashboard/admin/jest.config.js",
+            "tsConfig": "libs/foresight-dashboard/admin/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "foresight-dashboard-add-widgets": {
+      "root": "libs/foresight-dashboard/add-widgets",
+      "sourceRoot": "libs/foresight-dashboard/add-widgets/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/foresight-dashboard/add-widgets/.eslintrc",
+            "tsConfig": [
+              "libs/foresight-dashboard/add-widgets/tsconfig.lib.json",
+              "libs/foresight-dashboard/add-widgets/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/foresight-dashboard/add-widgets/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/foresight-dashboard/add-widgets/jest.config.js",
+            "tsConfig": "libs/foresight-dashboard/add-widgets/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "foresight-dashboard-help": {
+      "root": "libs/foresight-dashboard/help",
+      "sourceRoot": "libs/foresight-dashboard/help/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/foresight-dashboard/help/.eslintrc",
+            "tsConfig": [
+              "libs/foresight-dashboard/help/tsconfig.lib.json",
+              "libs/foresight-dashboard/help/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/foresight-dashboard/help/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/foresight-dashboard/help/jest.config.js",
+            "tsConfig": "libs/foresight-dashboard/help/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "foresight-dashboard-agreements": {
+      "root": "libs/foresight-dashboard/agreements",
+      "sourceRoot": "libs/foresight-dashboard/agreements/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/foresight-dashboard/agreements/.eslintrc",
+            "tsConfig": [
+              "libs/foresight-dashboard/agreements/tsconfig.lib.json",
+              "libs/foresight-dashboard/agreements/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/foresight-dashboard/agreements/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/foresight-dashboard/agreements/jest.config.js",
+            "tsConfig": "libs/foresight-dashboard/agreements/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "foresight-dashboard-condition-monitoring": {
+      "root": "libs/foresight-dashboard/condition-monitoring",
+      "sourceRoot": "libs/foresight-dashboard/condition-monitoring/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "config": "libs/foresight-dashboard/condition-monitoring/.eslintrc",
+            "tsConfig": [
+              "libs/foresight-dashboard/condition-monitoring/tsconfig.lib.json",
+              "libs/foresight-dashboard/condition-monitoring/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/foresight-dashboard/condition-monitoring/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/foresight-dashboard/condition-monitoring/jest.config.js",
+            "tsConfig": "libs/foresight-dashboard/condition-monitoring/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

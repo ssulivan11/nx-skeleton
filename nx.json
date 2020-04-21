@@ -46,6 +46,21 @@
     },
     "network-entitlements": {
       "tags": []
+    },
+    "foresight-dashboard-admin": {
+      "tags": []
+    },
+    "foresight-dashboard-add-widgets": {
+      "tags": []
+    },
+    "foresight-dashboard-help": {
+      "tags": []
+    },
+    "foresight-dashboard-agreements": {
+      "tags": []
+    },
+    "foresight-dashboard-condition-monitoring": {
+      "tags": []
     }
   }
 }
