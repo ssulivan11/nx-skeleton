@@ -24,7 +24,7 @@
     "affected:lint": "nx affected:lint",
     "affected:dep-graph": "nx affected:dep-graph",
     "---- FORMAT -----------------------------------------------------": "",
-    "format": "nx format:write && nx format:check",
+    "format": "nx format:write",
     "format:write": "nx format:write",
     "format:check": "nx format:check",
     "---- NX HELPERS -------------------------------------------------": "",
@@ -38,9 +38,22 @@
     "e2e": "nx e2e",
     "help": "nx help"
   },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "yarn format",
+      "yarn affected:lint"
+    ],
+    "*.{scss,css}": [
+      "yarn format",
+      "yarn affected:lint"
+    ],
+    "*.{json,md}": [
+      "yarn format"
+    ]
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn affected:lint --uncommitted && yarn format",
+      "pre-commit": "lint-staged",
       "pre-push": "yarn affected:test"
     }
   },
@@ -84,6 +97,7 @@
     "eslint-plugin-react-hooks": "2.3.0",
     "husky": "^4.2.5",
     "jest": "25.2.3",
+    "lint-staged": "^10.1.7",
     "prettier": "1.19.1",
     "ts-jest": "25.2.1",
     "ts-node": "~7.0.0",
