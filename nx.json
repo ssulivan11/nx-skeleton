@@ -32,6 +32,10 @@
       "tags": [],
       "implicitDependencies": ["foresight-dashboard"]
     },
+    "foresight-dashboard-protractor-e2e": {
+      "tags": [],
+      "implicitDependencies": ["foresight-dashboard"]
+    },
     "shared-ui-components": {
       "tags": []
     },

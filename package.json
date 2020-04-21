@@ -9,7 +9,8 @@
     "build:dashboard": "nx build foresight-dashboard",
     "test:dashboard": "nx test foresight-dashboard",
     "lint:dashboard": "nx workspace-lint && nx lint foresight-dashboard",
-    "e2e:dashboard": "nx e2e foresight-dashboard",
+    "cypress:dashboard": "nx e2e foresight-dashboard-e2e",
+    "protractor:dashboard": "nx e2e foresight-dashboard-protractor-e2e",
     "---- SHARED UI COMPONENTS ---------------------------------------": "",
     "storybook": "nx run shared-ui-components:storybook",
     "test:components": "nx test shared-ui-components",
@@ -36,7 +37,8 @@
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
     "e2e": "nx e2e",
-    "help": "nx help"
+    "help": "nx help",
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
@@ -60,7 +62,18 @@
   "dependencies": {
     "document-register-element": "1.13.1",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-dom": "16.12.0",
+    "@angular/animations": "^9.1.0",
+    "@angular/common": "^9.1.0",
+    "@angular/compiler": "^9.1.0",
+    "@angular/core": "^9.1.0",
+    "@angular/forms": "^9.1.0",
+    "@angular/platform-browser": "^9.1.0",
+    "@angular/platform-browser-dynamic": "^9.1.0",
+    "@angular/router": "^9.1.0",
+    "core-js": "^2.5.4",
+    "rxjs": "~6.5.4",
+    "zone.js": "^0.10.2"
   },
   "resolutions": {
     "@svgr/webpack": "5.2.0"
@@ -68,6 +81,7 @@
   "devDependencies": {
     "@babel/core": "7.8.3",
     "@babel/preset-typescript": "^7.9.0",
+    "@nrwl/angular": "^9.2.3",
     "@nrwl/cypress": "9.2.3",
     "@nrwl/eslint-plugin-nx": "9.2.3",
     "@nrwl/jest": "9.2.3",
@@ -102,6 +116,16 @@
     "ts-jest": "25.2.1",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "@angular/compiler-cli": "^9.1.0",
+    "@angular/language-service": "^9.1.0",
+    "@angular-devkit/build-angular": "0.901.0",
+    "codelyzer": "~5.0.1",
+    "jest-preset-angular": "8.1.2",
+    "protractor": "~5.4.0",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "@types/jasmine": "~2.8.6",
+    "@types/jasminewd2": "~2.0.3"
   }
 }

@@ -493,6 +493,34 @@
           }
         }
       }
+    },
+    "foresight-dashboard-protractor-e2e": {
+      "root": "apps/foresight-dashboard-protractor-e2e",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/foresight-dashboard-protractor-e2e/protractor.conf.js",
+            "devServerTarget": "foresight-dashboard:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "foresight-dashboard:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/foresight-dashboard-protractor-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/foresight-dashboard-protractor-e2e/**"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -558,6 +586,13 @@
       "library": {
         "linter": "eslint"
       }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "protractor"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
     }
   },
   "defaultProject": "foresight-dashboard"
