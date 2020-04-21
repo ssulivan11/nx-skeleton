@@ -10,7 +10,7 @@
     "test:dashboard": "nx test foresight-dashboard",
     "lint:dashboard": "nx workspace-lint && nx lint foresight-dashboard",
     "e2e:dashboard": "nx e2e foresight-dashboard",
-    "---- SHARD UI COMPONENTS ----------------------------------------": "",
+    "---- SHARED UI COMPONENTS ---------------------------------------": "",
     "storybook": "nx run shared-ui-components:storybook",
     "test:components": "nx test shared-ui-components",
     "lint:components": "nx workspace-lint && nx lint shared-ui-components",
