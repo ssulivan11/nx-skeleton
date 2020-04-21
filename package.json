@@ -24,7 +24,7 @@
     "affected:lint": "nx affected:lint",
     "affected:dep-graph": "nx affected:dep-graph",
     "---- FORMAT -----------------------------------------------------": "",
-    "format": "nx format:write",
+    "format": "nx format:write && nx format:check",
     "format:write": "nx format:write",
     "format:check": "nx format:check",
     "---- NX HELPERS -------------------------------------------------": "",
@@ -40,7 +40,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "nx affected:lint --uncommitted"
+      "pre-commit": "yarn affected:lint --uncommitted && yarn format",
+      "pre-push": "yarn affected:test"
     }
   },
   "dependencies": {
