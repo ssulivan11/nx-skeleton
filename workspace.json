@@ -224,6 +224,18 @@
             "tsConfig": "libs/network/athena/tsconfig.spec.json",
             "passWithNoTests": true
           }
+        },
+        "ls": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "ls"
+              }
+            ],
+            "cwd": "libs/network/athena/src/lib",
+            "parallel": false
+          }
         }
       }
     },
