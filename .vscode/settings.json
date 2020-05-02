@@ -1,5 +1,6 @@
 {
   "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
   "workbench.colorCustomizations": {
     "activityBar.background": "#222",
     "activityBar.activeBackground": "#444",
