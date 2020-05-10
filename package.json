@@ -11,6 +11,8 @@
     "lint:dashboard": "nx workspace-lint && nx lint dashboard",
     "cypress:dashboard": "nx e2e dashboard-e2e",
     "protractor:dashboard": "nx e2e dashboard-protractor-e2e",
+    "---- TOOLBOX ----------------------------------------": "",
+    "start:toolbox": "nx serve toolbox --port 4200",
     "---- SHARED UI CORE ---------------------------------------": "",
     "storybook": "nx run shared-ui-core:storybook",
     "test:ui-core": "nx test shared-ui-core",

@@ -230,6 +230,127 @@
       "projectType": "library",
       "schematics": {},
       "architect": {}
+    },
+    "toolbox": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/toolbox",
+      "sourceRoot": "apps/toolbox/src",
+      "prefix": "nx-skeleton",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/toolbox",
+            "index": "apps/toolbox/src/index.html",
+            "main": "apps/toolbox/src/main.ts",
+            "polyfills": "apps/toolbox/src/polyfills.ts",
+            "tsConfig": "apps/toolbox/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/toolbox/src/favicon.ico",
+              "apps/toolbox/src/assets"
+            ],
+            "styles": ["apps/toolbox/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/toolbox/src/environments/environment.ts",
+                  "with": "apps/toolbox/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "toolbox:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "toolbox:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "toolbox:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/toolbox/tsconfig.app.json",
+              "apps/toolbox/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/toolbox/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/toolbox/jest.config.js",
+            "tsConfig": "apps/toolbox/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/toolbox/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "toolbox-e2e": {
+      "root": "apps/toolbox-e2e",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/toolbox-e2e/protractor.conf.js",
+            "devServerTarget": "toolbox:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "toolbox:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/toolbox-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**", "!apps/toolbox-e2e/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -14,7 +14,7 @@ export const App = () => {
         <div className="logo">
           <Logo width="75" height="75" />
         </div>
-        <h1>Welcome to NX-Skeleton</h1>
+        <h1>Welcome to NX-Skeleton - Dashobard App</h1>
       </div>
       <div className="contianer">
         <h2>Shared UI-Core</h2>
