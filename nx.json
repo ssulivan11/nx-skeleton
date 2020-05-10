@@ -25,51 +25,24 @@
     }
   },
   "projects": {
-    "foresight-dashboard": {
+    "dashboard": {
       "tags": []
     },
-    "foresight-dashboard-e2e": {
+    "dashboard-e2e": {
       "tags": [],
-      "implicitDependencies": ["foresight-dashboard"]
+      "implicitDependencies": ["dashboard"]
     },
-    "foresight-dashboard-protractor-e2e": {
+    "dashboard-protractor-e2e": {
       "tags": [],
-      "implicitDependencies": ["foresight-dashboard"]
+      "implicitDependencies": ["dashboard"]
     },
-    "shared-ui-components": {
+    "shared-ui-core": {
       "tags": []
     },
     "shared-utils": {
       "tags": []
     },
-    "network-athena": {
-      "tags": []
-    },
-    "network-athena-cm": {
-      "tags": []
-    },
-    "network-platform": {
-      "tags": []
-    },
-    "network-salesforce": {
-      "tags": []
-    },
-    "network-entitlements": {
-      "tags": []
-    },
-    "foresight-dashboard-admin": {
-      "tags": []
-    },
-    "foresight-dashboard-add-widgets": {
-      "tags": []
-    },
-    "foresight-dashboard-help": {
-      "tags": []
-    },
-    "foresight-dashboard-agreements": {
-      "tags": []
-    },
-    "foresight-dashboard-condition-monitoring": {
+    "shared-assets": {
       "tags": []
     }
   }

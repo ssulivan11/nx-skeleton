@@ -11,12 +11,12 @@ yarn
 
 ```bash
 yarn start
-$ nx serve foresight-dashboard --port 3000
+$ nx serve dashboard --port 3000
 ```
 
 ### Start - Storybook UI Components
 
 ```bash
 yarn storybook
-$ nx run shared-ui-components:storybook
+$ nx run shared-ui-core:storybook
 ```

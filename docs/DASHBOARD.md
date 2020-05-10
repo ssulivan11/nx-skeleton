@@ -3,17 +3,17 @@
 ### Jest Unit Tests
 
 ```dash
-nx test foresight-dashboard
+nx test dashboard
 ```
 
 ### Cypress E2E Tests
 
 ```dash
-nx e2e foresight-dashboard-e2e
+nx e2e dashboard-e2e
 ```
 
 ### Protractor E2E Tests
 
 ```dash
-nx e2e foresight-dashboard-protractor-e2e
+nx e2e dashboard-protractor-e2e
 ```

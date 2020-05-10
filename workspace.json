@@ -1,25 +1,25 @@
 {
   "version": 1,
   "projects": {
-    "foresight-dashboard": {
-      "root": "apps/foresight-dashboard",
-      "sourceRoot": "apps/foresight-dashboard/src",
+    "dashboard": {
+      "root": "apps/dashboard",
+      "sourceRoot": "apps/dashboard/src",
       "projectType": "application",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@nrwl/web:build",
           "options": {
-            "outputPath": "dist/apps/foresight-dashboard",
-            "index": "apps/foresight-dashboard/src/index.html",
-            "main": "apps/foresight-dashboard/src/main.tsx",
-            "polyfills": "apps/foresight-dashboard/src/polyfills.ts",
-            "tsConfig": "apps/foresight-dashboard/tsconfig.app.json",
+            "outputPath": "dist/apps/dashboard",
+            "index": "apps/dashboard/src/index.html",
+            "main": "apps/dashboard/src/main.tsx",
+            "polyfills": "apps/dashboard/src/polyfills.ts",
+            "tsConfig": "apps/dashboard/tsconfig.app.json",
             "assets": [
-              "apps/foresight-dashboard/src/favicon.ico",
-              "apps/foresight-dashboard/src/assets"
+              "apps/dashboard/src/favicon.ico",
+              "apps/dashboard/src/assets"
             ],
-            "styles": ["apps/foresight-dashboard/src/styles.scss"],
+            "styles": ["apps/dashboard/src/styles.scss"],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
           },
@@ -27,8 +27,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/foresight-dashboard/src/environments/environment.ts",
-                  "with": "apps/foresight-dashboard/src/environments/environment.prod.ts"
+                  "replace": "apps/dashboard/src/environments/environment.ts",
+                  "with": "apps/dashboard/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -51,11 +51,11 @@
         "serve": {
           "builder": "@nrwl/web:dev-server",
           "options": {
-            "buildTarget": "foresight-dashboard:build"
+            "buildTarget": "dashboard:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "foresight-dashboard:build:production"
+              "buildTarget": "dashboard:build:production"
             }
           }
         },
@@ -63,39 +63,39 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "apps/foresight-dashboard/.eslintrc",
+            "config": "apps/dashboard/.eslintrc",
             "tsConfig": [
-              "apps/foresight-dashboard/tsconfig.app.json",
-              "apps/foresight-dashboard/tsconfig.spec.json"
+              "apps/dashboard/tsconfig.app.json",
+              "apps/dashboard/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/foresight-dashboard/**"]
+            "exclude": ["**/node_modules/**", "!apps/dashboard/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/foresight-dashboard/jest.config.js",
-            "tsConfig": "apps/foresight-dashboard/tsconfig.spec.json",
+            "jestConfig": "apps/dashboard/jest.config.js",
+            "tsConfig": "apps/dashboard/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
       }
     },
-    "foresight-dashboard-e2e": {
-      "root": "apps/foresight-dashboard-e2e",
-      "sourceRoot": "apps/foresight-dashboard-e2e/src",
+    "dashboard-e2e": {
+      "root": "apps/dashboard-e2e",
+      "sourceRoot": "apps/dashboard-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/foresight-dashboard-e2e/cypress.json",
-            "tsConfig": "apps/foresight-dashboard-e2e/tsconfig.e2e.json",
-            "devServerTarget": "foresight-dashboard:serve"
+            "cypressConfig": "apps/dashboard-e2e/cypress.json",
+            "tsConfig": "apps/dashboard-e2e/tsconfig.e2e.json",
+            "devServerTarget": "dashboard:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "foresight-dashboard:serve:production"
+              "devServerTarget": "dashboard:serve:production"
             }
           }
         },
@@ -103,19 +103,44 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "apps/foresight-dashboard-e2e/.eslintrc",
-            "tsConfig": ["apps/foresight-dashboard-e2e/tsconfig.e2e.json"],
+            "config": "apps/dashboard-e2e/.eslintrc",
+            "tsConfig": ["apps/dashboard-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/dashboard-e2e/**"]
+          }
+        }
+      }
+    },
+    "dashboard-protractor-e2e": {
+      "root": "apps/dashboard-protractor-e2e",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/dashboard-protractor-e2e/protractor.conf.js",
+            "devServerTarget": "dashboard:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dashboard:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/dashboard-protractor-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**",
-              "!apps/foresight-dashboard-e2e/**"
+              "!apps/dashboard-protractor-e2e/**"
             ]
           }
         }
       }
     },
-    "shared-ui-components": {
-      "root": "libs/shared/ui-components",
-      "sourceRoot": "libs/shared/ui-components/src",
+    "shared-ui-core": {
+      "root": "libs/shared/ui-core",
+      "sourceRoot": "libs/shared/ui-core/src",
       "projectType": "library",
       "schematics": {},
       "architect": {
@@ -123,19 +148,19 @@
           "builder": "@nrwl/linter:lint",
           "options": {
             "linter": "eslint",
-            "config": "libs/shared/ui-components/.eslintrc",
+            "config": "libs/shared/ui-core/.eslintrc",
             "tsConfig": [
-              "libs/shared/ui-components/tsconfig.lib.json",
-              "libs/shared/ui-components/tsconfig.spec.json"
+              "libs/shared/ui-core/tsconfig.lib.json",
+              "libs/shared/ui-core/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ui-components/**"]
+            "exclude": ["**/node_modules/**", "!libs/shared/ui-core/**"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/shared/ui-components/jest.config.js",
-            "tsConfig": "libs/shared/ui-components/tsconfig.spec.json",
+            "jestConfig": "libs/shared/ui-core/jest.config.js",
+            "tsConfig": "libs/shared/ui-core/tsconfig.spec.json",
             "passWithNoTests": true
           }
         },
@@ -145,7 +170,7 @@
             "uiFramework": "@storybook/react",
             "port": 4400,
             "config": {
-              "configFolder": "libs/shared/ui-components/.storybook"
+              "configFolder": "libs/shared/ui-core/.storybook"
             }
           },
           "configurations": {
@@ -158,9 +183,9 @@
           "builder": "@nrwl/storybook:build",
           "options": {
             "uiFramework": "@storybook/react",
-            "outputPath": "dist/storybook/shared-ui-components",
+            "outputPath": "dist/storybook/shared-ui-core",
             "config": {
-              "configFolder": "libs/shared/ui-components/.storybook"
+              "configFolder": "libs/shared/ui-core/.storybook"
             }
           },
           "configurations": {
@@ -199,340 +224,12 @@
         }
       }
     },
-    "network-athena": {
-      "root": "libs/network/athena",
-      "sourceRoot": "libs/network/athena/src",
+    "shared-assets": {
+      "root": "libs/shared/assets",
+      "sourceRoot": "libs/shared/assets/src",
       "projectType": "library",
       "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "config": "libs/network/athena/.eslintrc",
-            "tsConfig": [
-              "libs/network/athena/tsconfig.lib.json",
-              "libs/network/athena/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/network/athena/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/network/athena/jest.config.js",
-            "tsConfig": "libs/network/athena/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        },
-        "ls": {
-          "builder": "@nrwl/workspace:run-commands",
-          "options": {
-            "commands": [
-              {
-                "command": "ls"
-              }
-            ],
-            "cwd": "libs/network/athena/src/lib",
-            "parallel": false
-          }
-        }
-      }
-    },
-    "network-athena-cm": {
-      "root": "libs/network/athena-cm",
-      "sourceRoot": "libs/network/athena-cm/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "config": "libs/network/athena-cm/.eslintrc",
-            "tsConfig": [
-              "libs/network/athena-cm/tsconfig.lib.json",
-              "libs/network/athena-cm/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/network/athena-cm/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/network/athena-cm/jest.config.js",
-            "tsConfig": "libs/network/athena-cm/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "network-platform": {
-      "root": "libs/network/platform",
-      "sourceRoot": "libs/network/platform/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "config": "libs/network/platform/.eslintrc",
-            "tsConfig": [
-              "libs/network/platform/tsconfig.lib.json",
-              "libs/network/platform/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/network/platform/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/network/platform/jest.config.js",
-            "tsConfig": "libs/network/platform/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "network-salesforce": {
-      "root": "libs/network/salesforce",
-      "sourceRoot": "libs/network/salesforce/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "config": "libs/network/salesforce/.eslintrc",
-            "tsConfig": [
-              "libs/network/salesforce/tsconfig.lib.json",
-              "libs/network/salesforce/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/network/salesforce/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/network/salesforce/jest.config.js",
-            "tsConfig": "libs/network/salesforce/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "network-entitlements": {
-      "root": "libs/network/entitlements",
-      "sourceRoot": "libs/network/entitlements/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "config": "libs/network/entitlements/.eslintrc",
-            "tsConfig": [
-              "libs/network/entitlements/tsconfig.lib.json",
-              "libs/network/entitlements/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/network/entitlements/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/network/entitlements/jest.config.js",
-            "tsConfig": "libs/network/entitlements/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "foresight-dashboard-admin": {
-      "root": "libs/foresight-dashboard/admin",
-      "sourceRoot": "libs/foresight-dashboard/admin/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "config": "libs/foresight-dashboard/admin/.eslintrc",
-            "tsConfig": [
-              "libs/foresight-dashboard/admin/tsconfig.lib.json",
-              "libs/foresight-dashboard/admin/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/foresight-dashboard/admin/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/foresight-dashboard/admin/jest.config.js",
-            "tsConfig": "libs/foresight-dashboard/admin/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "foresight-dashboard-add-widgets": {
-      "root": "libs/foresight-dashboard/add-widgets",
-      "sourceRoot": "libs/foresight-dashboard/add-widgets/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "config": "libs/foresight-dashboard/add-widgets/.eslintrc",
-            "tsConfig": [
-              "libs/foresight-dashboard/add-widgets/tsconfig.lib.json",
-              "libs/foresight-dashboard/add-widgets/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/foresight-dashboard/add-widgets/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/foresight-dashboard/add-widgets/jest.config.js",
-            "tsConfig": "libs/foresight-dashboard/add-widgets/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "foresight-dashboard-help": {
-      "root": "libs/foresight-dashboard/help",
-      "sourceRoot": "libs/foresight-dashboard/help/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "config": "libs/foresight-dashboard/help/.eslintrc",
-            "tsConfig": [
-              "libs/foresight-dashboard/help/tsconfig.lib.json",
-              "libs/foresight-dashboard/help/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/foresight-dashboard/help/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/foresight-dashboard/help/jest.config.js",
-            "tsConfig": "libs/foresight-dashboard/help/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "foresight-dashboard-agreements": {
-      "root": "libs/foresight-dashboard/agreements",
-      "sourceRoot": "libs/foresight-dashboard/agreements/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "config": "libs/foresight-dashboard/agreements/.eslintrc",
-            "tsConfig": [
-              "libs/foresight-dashboard/agreements/tsconfig.lib.json",
-              "libs/foresight-dashboard/agreements/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/foresight-dashboard/agreements/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/foresight-dashboard/agreements/jest.config.js",
-            "tsConfig": "libs/foresight-dashboard/agreements/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "foresight-dashboard-condition-monitoring": {
-      "root": "libs/foresight-dashboard/condition-monitoring",
-      "sourceRoot": "libs/foresight-dashboard/condition-monitoring/src",
-      "projectType": "library",
-      "schematics": {},
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "config": "libs/foresight-dashboard/condition-monitoring/.eslintrc",
-            "tsConfig": [
-              "libs/foresight-dashboard/condition-monitoring/tsconfig.lib.json",
-              "libs/foresight-dashboard/condition-monitoring/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/foresight-dashboard/condition-monitoring/**"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/foresight-dashboard/condition-monitoring/jest.config.js",
-            "tsConfig": "libs/foresight-dashboard/condition-monitoring/tsconfig.spec.json",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "foresight-dashboard-protractor-e2e": {
-      "root": "apps/foresight-dashboard-protractor-e2e",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "apps/foresight-dashboard-protractor-e2e/protractor.conf.js",
-            "devServerTarget": "foresight-dashboard:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "foresight-dashboard:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "apps/foresight-dashboard-protractor-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/foresight-dashboard-protractor-e2e/**"
-            ]
-          }
-        }
-      }
+      "architect": {}
     }
   },
   "cli": {
@@ -607,5 +304,5 @@
       "unitTestRunner": "jest"
     }
   },
-  "defaultProject": "foresight-dashboard"
+  "defaultProject": "dashboard"
 }
