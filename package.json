@@ -42,11 +42,11 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
-      "yarn format",
+      "yarn format --uncommitted",
       "yarn affected:lint --uncommitted"
     ],
     "*.{scss,css}": [
-      "yarn format",
+      "yarn format --uncommitted",
       "yarn affected:lint --uncommitted"
     ],
     "*.{json,md}": [
