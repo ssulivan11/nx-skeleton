@@ -1,4 +1,4 @@
-# NxSkeleton
+# NxSkeleton 💀
 
 ### Prerequisites:
 
